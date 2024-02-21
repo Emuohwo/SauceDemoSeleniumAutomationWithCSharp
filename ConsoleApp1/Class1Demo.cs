@@ -131,9 +131,18 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Failed to load order confirmation page");
             }
+            IWebElement successMsg = _webDriver.FindElement(By.TagName("h2"));
+            Assert.Pass(("Thank you for your order!"));
 
-            // 18.
+            
 
+
+
+            // 18. Logout from the application.
+            _webDriver.FindElement(By.Id("react-burger-menu-btn")).Click();
+           IWebElement menu = _webDriver.FindElement(By.Id("bm-menu- wrap"));
+            _webDriver.SwitchTo().ActiveElement();
+            _webDriver.FindElement(By.Id("logout_sidebar_link")).Click();
 
             // 19. 
 
